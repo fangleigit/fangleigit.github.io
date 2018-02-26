@@ -1,0 +1,605 @@
+
+/********************
+ * HTML CSS
+ */
+
+
+.chartWrap {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+/********************
+ * TOOLTIP CSS
+ */
+
+.imtooltip {
+    position: absolute;
+    background-color:#52607B;
+    padding: 5px;
+	COLOR:#FFF;
+    border: 2px solid #394764;
+    z-index: 10000;
+    font-family: Arial;
+    font-size: 12px;
+	padding-top:10px;
+    background:#5A6581 url(resource:/images/jian1.png) no-repeat top center;
+    -moz-border-radius: 8px;
+    border-radius: 5px;
+
+
+
+   
+}
+
+.imtooltip h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.imtooltip p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.imtooltip span {
+    display: inline-block;
+    margin: 2px 0;
+}
+
+.imtooltip-pending-removal {
+    position: absolute;
+    pointer-events: none;
+}
+
+
+/********************
+ * SVG CSS
+ */
+
+
+svg {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Trying to get SVG to act like a greedy block in all browsers */
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+
+svg text {
+    font: normal 12px sans-serif;
+}
+
+svg .title {
+    font: bold 14px Arial;
+}
+
+.im3 .im-background {
+    fill: none;
+    /*
+    pointer-events: none;
+    */
+}
+
+.im3.im-noData {
+    font-size: 18px;
+    font-weight: bolf;
+}
+
+
+/**********
+*  Brush
+*/
+
+.im-brush .extent {
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+
+
+/**********
+*  Legend
+*/
+
+.im3 .im-legend .im-series {
+    cursor: pointer;
+}
+
+.im3 .im-legend .disabled circle {
+    fill-opacity: 0;
+}
+
+
+
+/**********
+*  Axes
+*/
+
+.im3 .im-axis path {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .75;
+    shape-rendering: crispEdges;
+}
+
+.im3 .im-axis path.domain {
+    stroke-opacity: .75;
+}
+
+.im3 .im-axis line {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .25;
+    shape-rendering: crispEdges;
+}
+
+.im3 .im-axis line.zero {
+    stroke-opacity: .75;
+}
+
+.im3 .im-axis .im-axisMaxMin text {
+    font-weight: bold;
+}
+
+
+/**********
+*  Brush
+*/
+
+.im-brush .resize path {
+    fill: #eee;
+    stroke: #666;
+}
+
+
+
+/**********
+*  Bars
+*/
+
+.im3 .im-bars .negative rect {
+    zfill: brown;
+    cursor: pointer;
+}
+
+.im3 .im-bars rect {
+    zfill: steelblue;
+    cursor: pointer;
+    fill-opacity: .75;
+
+    transition: fill-opacity 250ms linear;
+    -moz-transition: fill-opacity 250ms linear;
+    -webkit-transition: fill-opacity 250ms linear;
+}
+
+.im3 .im-bars rect:hover {
+    fill-opacity: 1;
+}
+
+.im3 .im-bars .hover rect {
+    fill: lightblue;
+}
+
+.im3 .im-bars text {
+    fill: rgba(0,0,0,0);
+}
+
+.im3 .im-bars .hover text {
+    fill: rgba(0,0,0,1);
+}
+
+.im3 .im-x.im-axis text {
+    transform: rotate(90);
+}
+
+
+/**********
+*  Bars
+*/
+
+.im3 .im-multibar .im-groups rect,
+.im3 .im-multibarHorizontal .im-groups rect,
+.im3 .im-discretebar .im-groups rect {
+    stroke-opacity: 0;
+
+    transition: fill-opacity 250ms linear;
+    -moz-transition: fill-opacity 250ms linear;
+    -webkit-transition: fill-opacity 250ms linear;
+}
+
+.im3 .im-multibar .im-groups rect:hover,
+.im3 .im-multibarHorizontal .im-groups rect:hover,
+.im3 .im-discretebar .im-groups rect:hover {
+    fill-opacity: 1;
+}
+
+.im3 .im-discretebar .im-groups text,
+.im3 .im-multibarHorizontal .im-groups text {
+    font-weight: bold;
+    fill: rgba(0,0,0,1);
+    stroke: rgba(0,0,0,0);
+}
+
+/***********
+*  Pie Chart
+*/
+
+.im3.im-pie path {
+    stroke-opacity: 0;
+
+    transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+    -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+    -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+
+}
+
+.im3.im-pie .im-slice text {
+    stroke: #000;
+    stroke-width: 0;
+}
+
+.im3.im-pie path {
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-opacity: 1;
+}
+
+.im3.im-pie .hover path {
+    fill-opacity: .7;
+    /*
+      stroke-width: 6px;
+      stroke-opacity: 1;
+    */
+}
+
+.im3.im-pie .im-label rect {
+    fill-opacity: 0;
+    stroke-opacity: 0;
+}
+
+/**********
+* Lines
+*/
+
+.im3 .im-groups path.im-line {
+    fill: none;
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    shape-rendering: geometricPrecision;
+
+    /*
+    transition: stroke-width 250ms linear;
+    -moz-transition: stroke-width 250ms linear;
+    -webkit-transition: stroke-width 250ms linear;
+
+    transition-delay: 250ms
+    -moz-transition-delay: 250ms;
+    -webkit-transition-delay: 250ms;
+    */
+}
+
+.im3 .im-groups path.im-area {
+    stroke: none;
+    stroke-linecap: round;
+    shape-rendering: geometricPrecision;
+
+    /*
+    stroke-width: 2.5px;
+    transition: stroke-width 250ms linear;
+    -moz-transition: stroke-width 250ms linear;
+    -webkit-transition: stroke-width 250ms linear;
+
+    transition-delay: 250ms
+    -moz-transition-delay: 250ms;
+    -webkit-transition-delay: 250ms;
+    */
+}
+
+.im3 .im-line.hover path {
+    stroke-width: 6px;
+}
+
+/*
+.im3.scatter .groups .point {
+  fill-opacity: 0.1;
+  stroke-opacity: 0.1;
+}
+  */
+
+.im3.im-line .im3.im-scatter .im-groups .im-point {
+    fill-opacity: 0;
+    stroke-opacity: 0;
+}
+
+.im3.im-scatter.im-single-point .im-groups .im-point {
+    fill-opacity: .5;
+    stroke-opacity: .5;
+}
+
+
+.im3 .im-groups .im-point {
+    transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+    -moz-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+    -webkit-transition: stroke-width 250ms linear, stroke-opacity 250ms linear;
+}
+
+.im3.im-scatter .im-groups .im-point.hover,
+.im3 .im-groups .im-point.hover {
+    stroke-width: 20px;
+    fill-opacity: .5 !important;
+    stroke-opacity: .5 !important;
+}
+
+
+.im3 .im-point-paths path {
+    stroke: #aaa;
+    stroke-opacity: 0;
+    fill: #eee;
+    fill-opacity: 0;
+}
+
+
+
+.im3 .im-indexLine {
+    cursor: ew-resize;
+}
+
+
+/**********
+* Distribution
+*/
+
+.im3 .im-distribution {
+    pointer-events: none;
+}
+
+
+
+/**********
+*  Scatter
+*/
+
+.im3 .im-groups .im-point {
+    pointer-events: none;
+}
+
+.im3 .im-groups .im-point.hover {
+    stroke-width: 20px;
+    stroke-opacity: .5;
+}
+
+.im3 .im-scatter .im-point.hover {
+    fill-opacity: 1;
+}
+
+/*
+.im-group.hover .im-point {
+  fill-opacity: 1;
+}
+*/
+
+
+/**********
+*  Stacked Area
+*/
+
+.im3.im-stackedarea path.im-area {
+    fill-opacity: .7;
+    /*
+    stroke-opacity: .65;
+    fill-opacity: 1;
+    */
+    stroke-opacity: 0;
+
+    transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+    -moz-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+    -webkit-transition: fill-opacity 250ms linear, stroke-opacity 250ms linear;
+
+    /*
+    transition-delay: 500ms;
+    -moz-transition-delay: 500ms;
+    -webkit-transition-delay: 500ms;
+    */
+
+}
+
+.im3.im-stackedarea path.im-area.hover {
+    fill-opacity: .9;
+    /*
+    stroke-opacity: .85;
+    */
+}
+/*
+.d3stackedarea .groups path {
+  stroke-opacity: 0;
+}
+  */
+
+
+
+.im3.im-stackedarea .im-groups .im-point {
+    stroke-opacity: 0;
+    fill-opacity: 0;
+}
+
+.im3.im-stackedarea .im-groups .im-point.hover {
+    stroke-width: 20px;
+    stroke-opacity: .75;
+    fill-opacity: 1;
+}
+
+
+
+/**********
+*  Line Plus Bar
+*/
+
+.im3.im-linePlusBar .im-bar rect {
+    fill-opacity: .75;
+}
+
+.im3.im-linePlusBar .im-bar rect:hover {
+    fill-opacity: 1;
+}
+
+
+/**********
+*  Bullet
+*/
+
+.im3.im-bullet { font: 10px sans-serif; cursor: pointer; }
+.im3.im-bullet rect { fill-opacity: .6; }
+.im3.im-bullet rect:hover { fill-opacity: 1; }
+.im3.im-bullet .im-marker { stroke: #000; stroke-width: 2px; }
+.im3.im-bullet .im-markerTriangle { stroke: #000; fill: #fff; stroke-width: 1.5px; }
+.im3.im-bullet .im-tick line { stroke: #666; stroke-width: .5px; }
+.im3.im-bullet .im-range.im-s0 { fill: #eee; }
+.im3.im-bullet .im-range.im-s1 { fill: #ddd; }
+.im3.im-bullet .im-range.im-s2 { fill: #ccc; }
+.im3.im-bullet .im-measure.im-s0 { fill: steelblue; }
+.im3.im-bullet .im-measure.im-s1 { fill: darkblue; }
+.im3.im-bullet .im-title { font-size: 14px; font-weight: bold; }
+.im3.im-bullet .im-subtitle { fill: #999; }
+
+
+
+
+/**********
+* Sparkline
+*/
+
+.im3.im-sparkline path {
+    fill: none;
+}
+
+.im3.im-sparklineplus g.im-hoverValue {
+    pointer-events: none;
+}
+
+.im3.im-sparklineplus .im-hoverValue line {
+    stroke: #f44;
+    stroke-width: 1.5px;
+}
+
+.im3.im-sparklineplus,
+.im3.im-sparklineplus g {
+    pointer-events: all;
+}
+
+.im3 .im-hoverArea {
+    fill-opacity: 0;
+    stroke-opacity: 0;
+}
+
+.im3.im-sparklineplus .im-xValue,
+.im3.im-sparklineplus .im-yValue {
+    stroke: #666;
+    font-size: .5em;
+    font-weight: normal;
+}
+
+.im3.im-sparklineplus .im-yValue {
+    stroke: #f66;
+}
+
+
+/**********
+* historical stock
+*/
+
+.im3.im-ohlcBar .im-ticks .im-tick {
+    stroke-width: 2px;
+}
+
+.im3.im-ohlcBar .im-ticks .im-tick.hover {
+    stroke-width: 4px;
+}
+
+.im3.im-ohlcBar .im-ticks .im-tick.positive {
+    stroke: #2ca02c;
+}
+
+.im3.im-ohlcBar .im-ticks .im-tick.negative {
+    stroke: #d62728;
+}
+
+.im3.im-historicalStockChart .im-axis .im-axislabel {
+    font-weight: bold;
+}
+
+.im3.im-historicalStockChart .im-dragTarget {
+    fill-opacity: 0;
+    stroke: none;
+    cursor: move;
+}
+
+.im3 .im-brush .extent {
+    /*
+    cursor: ew-resize !important;
+    */
+    fill-opacity: 0 !important;
+}
+
+.im3 .im-brushBackground rect {
+    stroke: #000;
+    stroke-width: .4;
+    fill: #fff;
+    fill-opacity: .7;
+}
+
+
+
+/**********
+* Indented Tree
+*/
+
+
+/**
+ * TODO: the following 3 selectors are based on classes used in the example.  I should either make them standard and leave them here, or move to a CSS file not included in the library
+ */
+.im3.im-indentedtree .name {
+    margin-left: 5px;
+}
+
+.im3.im-indentedtree .clickable {
+    color: #08C;
+    cursor: pointer;
+}
+
+.im3.im-indentedtree span.clickable:hover {
+    color: #005580;
+    text-decoration: underline;
+}
+
+
+.im3.im-indentedtree .im-childrenCount {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.im3.im-indentedtree .im-treeicon {
+    cursor: pointer;
+    /*
+    cursor: n-resize;
+    */
+}
+
+.im3.im-indentedtree .im-treeicon.im-folded {
+    cursor: pointer;
+    /*
+    cursor: s-resize;
+    */
+}
+
+
